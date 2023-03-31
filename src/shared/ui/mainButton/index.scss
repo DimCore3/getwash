@@ -1,0 +1,21 @@
+.mainButton {
+    width: 170px;
+    height: 50px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header_button {
+    border: 1px solid #E9ECF5;
+    background-color: transparent;
+    color: var(--color-main-blue);
+}
+
+.header_button:hover {
+    border: 2px solid var(--color-main-blue);
+}
+
+.header_button:active {
+    background-color: rgba($color: #dadada, $alpha: 0.1);
+}
