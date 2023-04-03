@@ -13,10 +13,10 @@ export const Routing = () => {
         <Suspense fallback={<div>Загрузка...</div>}>
             <Routes >
                 <Route path="/" element={<Main />} />
-                <Route path="/how_use" element={<HowUse />} />
-                <Route path="/collegues" element={<Collegues />} />
-                <Route path="/download" element={<Download />} />
-                <Route path="/comments" element={<Comments />} />
+                <Route path="how_use" element={<HowUse />} />
+                <Route path="collegues" element={<Collegues />} />
+                <Route path="download" element={<Download />} />
+                <Route path="comments" element={<Comments />} />
                 <Route path="*" element={<p>Ничего не найдено</p>} />
             </Routes >
         </Suspense>
