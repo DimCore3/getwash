@@ -1,0 +1,15 @@
+.navButton {
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    p {
+        transform: rotate(90deg);
+        font-size: small;
+        font-weight: 600;
+    }
+}

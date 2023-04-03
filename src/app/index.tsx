@@ -1,15 +1,16 @@
 import './index.css';
 import { Routing } from "pages";
-import Header from "widgets/header";
 import { withProviders } from "./providers";
+import HeaderFooter from 'widgets/header_footer';
 
 function App() {
-    return (
-      <div className="App">
-        <Header/>
-        <Routing />
-      </div>
-    );
-  }
-  
+  return (
+    <div className="App">
+      <HeaderFooter type='header'/>
+      <Routing />
+      <HeaderFooter type='footer'/>
+    </div>
+  );
+}
+
 export default withProviders(App);

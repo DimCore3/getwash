@@ -1,0 +1,35 @@
+@mixin layout-default() {
+    display: flex;
+    justify-content: center;
+    border: 1px red solid;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+header {
+    @include layout-default;
+
+    h1 {
+        color: var(--color-main-blue);
+    }
+    .mainButton {
+        border: 1px solid var(--color-classic-light-grey);
+    }
+}
+
+footer {
+    @include layout-default;
+    background-color: var(--color-main-dark-blue);
+
+    h1 {
+        color: var(--color-classic-light-grey);
+    }
+    .navbar {
+        p {
+            color: var(--color-classic-light-grey);
+        }
+    }
+    .mainButton {
+        color: var(--color-classic-light-grey);
+        border: 1px solid var(--color-classic-grey);
+    }
+}

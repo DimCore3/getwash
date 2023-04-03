@@ -1,0 +1,68 @@
+@mixin flex-between() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+};
+
+@mixin desktop-proportions() {
+    height: 50px;
+    margin: 25px 0;
+    width: 80%;
+};
+
+.container {
+    @include flex-between;
+    h1 {
+        font-size: 23px;
+        font-weight: 900;
+    }
+}
+
+footer {
+    .navButton {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    header {
+        .navButton {
+            display: none;
+        }
+        .container {
+            @include desktop-proportions;
+        }
+    }
+
+    footer {
+        .container {
+            @include desktop-proportions;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        .desktop {
+            display: none;
+        }
+        .container {
+            height: 60px;
+            width: 90%;
+        }
+    }
+
+    footer {
+        .container {
+            height: min-content;
+            display: flex;
+            flex-direction: column;
+            line-height: 2rem;
+            padding: 2rem 0;
+
+            .navbar {
+                margin: 1rem 0;
+            }
+        }
+    }
+}

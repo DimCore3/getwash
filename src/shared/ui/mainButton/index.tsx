@@ -1,15 +1,15 @@
 import './index.scss';
 
 interface Props {
-    title: string,
+    children: string,
     action: any,
     typeClass: string
 } 
 
-const MainButton = ({title, action, typeClass}: Props) => {
+const MainButton = ({children, action, typeClass}: Props) => {
     return (
         <button onClick={action} className={'mainButton ' + typeClass}>
-            {title}
+            {children}
         </button>
     );
 }
