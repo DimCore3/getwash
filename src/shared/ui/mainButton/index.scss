@@ -4,19 +4,16 @@
     height: 50px;
     border-radius: 6px;
     font-weight: 600;
-    cursor: pointer;
-}
-
-.header_button {
     border: none;
     background-color: transparent;
     color: var(--color-main-blue);
+    cursor: pointer;
 }
 
-.header_button:hover {
+.mainButton:hover {
     border: 2px solid var(--color-main-blue);
 }
 
-.header_button:active {
+.mainButton:active {
     background-color: rgba(var(--color-main-active-blue-RGB), 0.1);
 }

@@ -3,12 +3,13 @@ import './index.scss';
 interface Props {
     children: string,
     action: any,
-    typeClass: string
+    typeClass: string,
+    disabled?: boolean,
 } 
 
-const MainButton = ({children, action, typeClass}: Props) => {
+const MainButton = ({children, action, typeClass, disabled = false}: Props) => {
     return (
-        <button onClick={action} className={'mainButton ' + typeClass}>
+        <button onClick={e => action(e)} className={'mainButton ' + typeClass} disabled={disabled}>
             {children}
         </button>
     );

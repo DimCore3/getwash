@@ -43,12 +43,15 @@ footer {
 
 @media screen and (max-width: 600px) {
     header {
+        h1 {
+            margin-left: 20px;
+        }
         .desktop {
             display: none;
         }
         .container {
             height: 60px;
-            width: 90%;
+            width: 100%;
         }
     }
 

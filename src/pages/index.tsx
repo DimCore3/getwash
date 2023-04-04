@@ -7,6 +7,7 @@ const HowUse = lazy(() => import("./howUse"));
 const Collegues = lazy(() => import("./collegues"));
 const Download = lazy(() => import("./download"));
 const Comments = lazy(() => import("./comments"));
+const Policy = lazy(() => import("./policy"));
 
 export const Routing = () => {
     return (
@@ -17,6 +18,7 @@ export const Routing = () => {
                 <Route path="collegues" element={<Collegues />} />
                 <Route path="download" element={<Download />} />
                 <Route path="comments" element={<Comments />} />
+                <Route path="policy" element={<Policy />} />
                 <Route path="*" element={<p>Ничего не найдено</p>} />
             </Routes >
         </Suspense>

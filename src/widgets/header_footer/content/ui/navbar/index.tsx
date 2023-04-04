@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import './index.scss';
 
-interface Links {
+type Links = {
     title: string,
     url: string,
 }

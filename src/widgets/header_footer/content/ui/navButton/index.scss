@@ -6,6 +6,12 @@
     cursor: pointer;
     background-color: transparent;
     border: none;
+    border-left: 1px var(--color-classic-light-grey) solid;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    height: 100%;
+    width: 60px;
 
     p {
         transform: rotate(90deg);
