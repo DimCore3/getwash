@@ -1,16 +1,15 @@
 import { MainButton } from 'shared/ui';
 import './index.scss'
-import { useState } from 'react';
-import InputText from './ui/inputText';
-import InputCheckbox from './ui/inputCheckbox';
-import { PrepareDataToArray } from './helpers';
+import { useEffect, useState } from 'react';
+import { ButtonClose, InputText, InputCheckbox } from './ui';
+import { isFieldsFilled, prepareDataToArray } from './helpers';
 import { Link } from 'react-router-dom';
 
 type Props = {
     setIsFormOpened: Function,
 }
 
-const FormGetAllow = ({ setIsFormOpened }: Props) => {
+const FormGetAllow = ({ setIsFormOpened }: Props) => { 
     const [data, setData] = useState({
         name: {
             img: 'name.svg',
@@ -36,6 +35,11 @@ const FormGetAllow = ({ setIsFormOpened }: Props) => {
             value: false,
         },
     })
+    
+    const [isFilled, setIsFilled] = useState(false);
+    useEffect(() => {
+        setIsFilled(isFieldsFilled(data))
+    }, [data]);   
 
     function setValue(name: string, value: string): void {
         let result = JSON.parse(JSON.stringify(data));
@@ -45,14 +49,14 @@ const FormGetAllow = ({ setIsFormOpened }: Props) => {
 
     function click(e: Event): void {
         e.preventDefault();
-        console.log(PrepareDataToArray(data));
+        console.log(prepareDataToArray(data));
         setIsFormOpened(false);
     };
 
     return (
         <div className="form_get_allow">
             <div className='closeButtonDiv'>
-                <button onClick={() => setIsFormOpened(false)}>X</button>
+                <ButtonClose isWindowOpened={setIsFormOpened}/>
             </div>
             <div className="form_title">
                 <h2>Стань нашим партнером и начни зарабатывать: </h2>
@@ -63,9 +67,9 @@ const FormGetAllow = ({ setIsFormOpened }: Props) => {
                 <InputText name='phone' data={data} setValue={setValue} />
                 <InputCheckbox name='mailSubscribe' data={data} setValue={setValue} />
                 <InputCheckbox name='dataCollection' data={data} setValue={setValue} />
-                <MainButton action={click} typeClass='button_send_form' disabled={true}>Получить доступ</MainButton>
+                <MainButton action={click} typeClass='button_send_form' disabled={!isFilled}>Получить доступ</MainButton>
                 <span>Нажимая кнопку Вы принимаете <Link onClick={() => setIsFormOpened(false)} to='policy'>политику конфиденциальности</Link></span>
-        </form>
+            </form>
         </div >
     );
 }

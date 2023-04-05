@@ -22,7 +22,7 @@ type DataType = {
     dataCollection: InputCheckbox,
 }
 
-function PrepareDataToArray(data: DataType) {
+function prepareDataToArray(data: DataType) {
     let result:ResultData[] = [];
     for (let key in data) {
         result.push({
@@ -33,4 +33,4 @@ function PrepareDataToArray(data: DataType) {
     return result;
 };
 
-export default PrepareDataToArray;
+export default prepareDataToArray;

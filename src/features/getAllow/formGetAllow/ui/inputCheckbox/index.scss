@@ -1,3 +1,16 @@
 .checkboxDiv {
     display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    line-height: 1rem;
+    cursor: pointer;
+    input {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+    p {
+        user-select: none;
+    }
 }

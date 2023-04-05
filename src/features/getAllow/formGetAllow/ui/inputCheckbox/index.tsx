@@ -14,11 +14,13 @@ type Props = {
     setValue: Function,
 };
 
-const InputCheckbox = ({name, data, setValue}: Props) => {
+const InputCheckbox = ({ name, data, setValue }: Props) => {
+    let value = data[name as keyof typeof data].value;
+
     return (
-        <div className="checkboxDiv">
-            <input onChange={e => setValue(name, e.target.checked)} type="checkbox" name={name} />
-            <p>{data[name as keyof typeof data].text}</p>
+        <div onClick={() => setValue(name, !value)} className="checkboxDiv">
+            <input checked={value} type="checkbox" readOnly />
+            <p> {data[name as keyof typeof data].text}</p>
         </div>
     );
 }
