@@ -25,6 +25,9 @@ footer {
 }
 
 @media screen and (min-width: 799px) {
+    .navbar_mobile {
+        display: none;
+    }
     header {
         .navButton {
             display: none;
@@ -33,7 +36,6 @@ footer {
             @include desktop-proportions;
         }
     }
-
     footer {
         .container {
             @include desktop-proportions;

@@ -17,3 +17,12 @@
 .mainButton:active {
     background-color: rgba(var(--color-main-active-blue-RGB), 0.1);
 }
+
+.classic_button_get_allow {
+    background-color: var(--color-main-blue);
+    color: white;
+}
+
+.classic_button_get_allow:active {
+    color: black;
+}
