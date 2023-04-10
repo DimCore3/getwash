@@ -1,0 +1,21 @@
+$arrow-border: 3px solid var(--color-main-blue);
+
+.content_arrow {
+    width: 30%;
+    height: 30px;
+    .underline_arrow {
+        border-bottom: $arrow-border;
+        height: 50%;
+        width: 100%;
+    }
+    .corner_arrow {
+        position: relative;
+        left: 91%;
+        bottom: 8px;
+        width: 10px;
+        height: 10px;
+        border-bottom: $arrow-border;
+        border-right: $arrow-border;
+        transform: rotate(-45deg);
+    }
+}

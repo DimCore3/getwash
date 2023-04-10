@@ -3,7 +3,7 @@ import './index.scss';
 interface Props {
     children: string,
     action: any,
-    typeClass?: string,
+    typeClass?: 'classic_button_get_allow' | 'button_send_form' | 'desktop' | '',
     disabled?: boolean,
 } 
 

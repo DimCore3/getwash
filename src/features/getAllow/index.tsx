@@ -3,7 +3,7 @@ import { useState } from 'react'
 import FormGetAllow from "./formGetAllow";
 
 type Props = {
-    typeClass: string,
+    typeClass?: "classic_button_get_allow" | 'desktop' | '',
 }
 
 const GetAllow = ({ typeClass }: Props) => {
