@@ -8,13 +8,14 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
     background-color: white;
     z-index: 1;
+
     .closeButtonDiv {
         display: flex;
         justify-content: flex-end;
