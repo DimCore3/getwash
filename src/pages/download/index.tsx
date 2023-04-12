@@ -1,7 +1,9 @@
+import './index.scss';
+
 const Download = () => {
     return ( 
-        <div>
-            Download
+        <div className="download_background">
+            <div className="download" />
         </div>
      );
 }

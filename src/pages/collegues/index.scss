@@ -1,0 +1,106 @@
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collegues_app_page_background {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+
+    .collegues_app_page {
+        width: var(--desktop-content-width);
+        text-align: center;
+
+        h2 {
+            line-height: 125%;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            margin-bottom: 17px;
+        }
+        p {
+            line-height: 140%;
+        }
+        .all_content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .content_element {
+                @include flex-center;
+                flex-direction: column;
+                border-radius: 10px;
+                box-shadow: 0px 16px 20px rgba(20, 27, 65, 0.03);
+
+                .content_icon {
+                    @include flex-center;
+                    width: 60px;
+                    height: 60px;
+                    background-color: #f7f8fd;
+                    border-radius: 6px;
+                    margin-bottom: 24px;
+                }
+                .content_text {
+                    p {
+                        color: var(--color-main-dark-blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 799px) {
+    h2 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .all_content {
+        height: 200px;
+        width: 100%;
+        margin: 60px 0;
+
+        .content_element {
+            height: 90%;
+            max-width: 210px;
+
+            .content_text {
+                width: 70%;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+};
+
+@media screen and (max-width: 800px) {
+    h2 {
+        font-size: 21px;
+    };
+    p {
+        font-size: 14px;
+    };
+    .all_content {
+        width: 100%;
+        margin: 20px 0;
+        flex-direction: column;
+
+        .content_element {
+            height: 140px;
+            width: 100%;
+            margin-bottom: 10px;
+
+            .content_text {
+                width: 80%;
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

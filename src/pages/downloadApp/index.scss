@@ -1,0 +1,154 @@
+.background_page_download {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    .background_content {
+        background-color: var(--color-main-blue);
+        margin: 40px 0;
+
+        .content_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            .content {
+                h2,
+                p,
+                a {
+                    color: white;
+                }
+                h2 {
+                    margin-bottom: 17px;
+                }
+                p {
+                    margin-bottom: 30px;
+                    line-height: 140%;
+                }
+                .download_market_buttons {
+                    display: flex;
+                    justify-content: space-between;
+
+                    div {
+                        background-color: black;
+                        max-height: 50px;
+                        max-width: 162px;
+                        min-width: fit-content;
+                        min-height: fit-content;
+                        border-radius: 6px;
+                        padding: 4px 8px;
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            text-decoration: none;
+                            img {
+                                width: 32px;
+                                height: 32px;
+                            }
+                            p {
+                                font-size: 14px;
+                                margin-bottom: 0;
+                            }
+                            h3 {
+                                font-size: 18px;
+                                font-weight: 600;
+                                font-family: "Courier New", Courier, monospace;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 799px) {
+    .download_page_content {
+        width: 80%;
+    }
+    .background_content {
+        display: flex;
+        height: 370px;
+        border-radius: 20px;
+
+        .content_container {
+            width: 50%;
+            height: 100%;
+            .content {
+                width: 80%;
+                h2 {
+                    font-size: 36px;
+                    line-height: 125%;
+                }
+                p {
+                    font-size: 18px;
+                }
+            }
+        }
+        .download_images {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            right: 15%;
+            .small_phone_img {
+                position: relative;
+                left: 50%;
+                z-index: 2;
+            }
+            .big_phone_img {
+                position: relative;
+                right: 10%;
+                bottom: 10%;
+                z-index: 1;
+                height: 110%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .download_page_content {
+        width: 100%;
+    }
+    .background_content {
+        width: 100%;
+        .content_container {
+            .content {
+                margin: 40px 0;
+                width: 90%;
+                h2 {
+                    font-size: 21px;
+                    line-height: 115%;
+                }
+                p {
+                    font-size: 14px;
+                }
+                .download_market_buttons {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 130px;
+                }
+            }
+        }
+        .download_images {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 320px;
+            overflow: hidden;
+
+            .small_phone_img {
+                display: none;
+            }
+            .big_phone_img {
+                position: relative;
+                right: 45px;
+                top: 60px;
+            }
+        }
+    }
+}

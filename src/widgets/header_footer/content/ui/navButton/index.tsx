@@ -2,11 +2,7 @@ import NavbarMobile from './navbarMobile';
 import './index.scss'
 import { useState } from 'react';
 
-type Props = {
-    action: Function,
-}
-
-const NavButton = ({ action }: Props) => {
+const NavButton = () => {
     const [isShowNavbar, setIsShowNavbar] = useState(false);
 
     return (

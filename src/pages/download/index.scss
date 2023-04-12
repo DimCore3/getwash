@@ -1,0 +1,36 @@
+@mixin size($width: 100px, $height: 100px) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes downloading {
+    0% {
+        @include size;
+        border: 4px var(--color-main-blue) dotted;
+        transform: rotate(0);
+    }
+    50% {
+        @include size(50px, 50px);
+        border: 8px var(--color-main-blue) dashed;
+    }
+    100% {
+        @include size;
+        border: 4px var(--color-main-blue) dotted;
+        transform: rotate(180deg);
+    }
+}
+
+.download_background {
+    @include size(100%, 70vh);
+    @include flex-center;
+    .download {
+        border-radius: 50%;
+        animation: downloading 1s ease-in-out 0s infinite;
+    }
+}
