@@ -5,8 +5,6 @@
     justify-content: center;
     .background_content {
         background-color: var(--color-main-blue);
-        margin: 40px 0;
-
         .content_container {
             display: flex;
             align-items: center;
@@ -52,6 +50,7 @@
                                 margin-bottom: 0;
                             }
                             h3 {
+                                color: white;
                                 font-size: 18px;
                                 font-weight: 600;
                                 font-family: "Courier New", Courier, monospace;
@@ -72,6 +71,7 @@
         display: flex;
         height: 370px;
         border-radius: 20px;
+        margin: 40px 0;
 
         .content_container {
             width: 50%;
