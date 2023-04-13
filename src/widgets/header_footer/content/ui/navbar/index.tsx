@@ -21,7 +21,7 @@ const Navbar = ({typeClass}: Props) => {
     return (
         <div className={"navbar " + typeClass}>
             {links.map(element =>
-                <Link to={'/' + element.url} style={{ textDecoration: 'none' }} key={element.url + '_key'}><p>{element.title}</p></Link>
+                <Link onClick={() => window.scrollTo(0,0)} to={'/' + element.url} style={{ textDecoration: 'none' }} key={element.url + '_key'}><p>{element.title}</p></Link>
             )}
         </div>
     );

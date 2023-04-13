@@ -95,12 +95,14 @@
             right: 15%;
             .small_phone_img {
                 position: relative;
+                animation: smallPhoneOpenPage 1s ease-out 0s;
                 left: 50%;
                 z-index: 2;
             }
             .big_phone_img {
                 position: relative;
                 right: 10%;
+                animation: bigPhoneOpenPage 1s ease-out 0s;
                 bottom: 10%;
                 z-index: 1;
                 height: 110%;
@@ -146,9 +148,37 @@
             }
             .big_phone_img {
                 position: relative;
+                animation: bigPhoneOpenMobilePage 1s ease-out 0s;
                 right: 45px;
                 top: 60px;
             }
         }
+    }
+}
+
+@keyframes bigPhoneOpenPage {
+    0% {
+        right: 0;
+    }
+    100% {
+        right: 10%;
+    }
+}
+
+@keyframes bigPhoneOpenMobilePage {
+    0% {
+        top: 150px;
+    }
+    100% {
+        top: 60px;
+    }
+}
+
+@keyframes smallPhoneOpenPage {
+    0% {
+        left: 70%;
+    }
+    100% {
+        left: 50%;
     }
 }

@@ -1,7 +1,6 @@
 $arrow-border: 3px solid var(--color-main-blue);
 
 .content_arrow {
-    width: 30%;
     height: 30px;
     .underline_arrow {
         border-bottom: $arrow-border;
@@ -17,5 +16,21 @@ $arrow-border: 3px solid var(--color-main-blue);
         border-bottom: $arrow-border;
         border-right: $arrow-border;
         transform: rotate(-45deg);
+    }
+}
+
+@media screen and (min-width: 799px) {
+    .content_arrow {
+        animation: openPage 1s ease-in-out;
+        width: 20%;
+    }
+}
+
+@keyframes openPage {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 20%;
     }
 }
