@@ -9,19 +9,28 @@ const Collegues = lazy(() => import("./collegues"));
 const DownloadApp = lazy(() => import("./downloadApp"));
 const Comments = lazy(() => import("./comments"));
 const Policy = lazy(() => import("./policy"));
+const NotFound = lazy(() => import("./notFound"));
 
 export const Routing = () => {
+    const routes = [
+        { path: '/', page: Main },
+        { path: '/how_use', page: HowUse },
+        { path: '/collegues', page: Collegues },
+        { path: '/download', page: DownloadApp },
+        { path: '/comments', page: Comments },
+        { path: '/policy', page: Policy },
+        { path: '*', page: NotFound },
+    ]
+
     return (
         <Suspense fallback={<Download />}>
-            <Routes >
-                <Route path="/" element={<Main />} />
-                <Route path="how_use" element={<HowUse />} />
-                <Route path="collegues" element={<Collegues />} />
-                <Route path="download" element={<DownloadApp />} />
-                <Route path="comments" element={<Comments />} />
-                <Route path="policy" element={<Policy />} />
-                <Route path="*" element={<p>Ничего не найдено</p>} />
-            </Routes >
+            <div className="root_pages">
+                <Routes >
+                    {routes.map(e => (
+                        <Route path={e.path} element={<e.page />} />
+                    ))}
+                </Routes >
+            </div>
         </Suspense>
     );
 };
