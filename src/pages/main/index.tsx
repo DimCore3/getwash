@@ -8,10 +8,12 @@ const Main = () => {
             <div className='main_page_content'>
                 <div className='left_main_content'>
                     <div className='left_main_title'>
-                        <p>
-                            Поиск ближайшей свободной автомойки и бронирование на удобное время.
+                        <span>
+                            <p>
+                                Поиск ближайшей свободной автомойки и бронирование на удобное время.
+                            </p>
                             <Arrow />
-                        </p>
+                        </span>
                     </div>
                     <p>Мы поможем сохранить ваше время для более интересных занятий, чем стоять в очереди.</p>
                     <GetAllow typeClass="classic_button_get_allow" />

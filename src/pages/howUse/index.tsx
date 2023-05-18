@@ -37,8 +37,8 @@ const HowUse = () => {
                 <div className='howUse_right_content'>
                     <h2>Быстрый старт:</h2>
                     {
-                        content.map(element =>
-                            <div className="content_howUse_row">
+                        content.map((element, index) =>
+                            <div className="content_howUse_row" key={element.img + '_key_' + index}>
                                 <div className='img_container'>
                                     <img src={require('./img/icons/' + element.img + '.svg')} alt={element.title} />
                                 </div>

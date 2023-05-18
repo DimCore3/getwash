@@ -19,10 +19,16 @@ $arrow-border: 3px solid var(--color-main-blue);
     }
 }
 
-@media screen and (min-width: 799px) {
+@media screen and (min-width: 800px) {
     .content_arrow {
         animation: openPage 1s ease-in-out;
         width: 20%;
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .content_arrow {
+        display: none;
     }
 }
 

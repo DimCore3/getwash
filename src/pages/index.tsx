@@ -26,8 +26,8 @@ export const Routing = () => {
         <Suspense fallback={<Download />}>
             <div className="root_pages">
                 <Routes >
-                    {routes.map(e => (
-                        <Route path={e.path} element={<e.page />} />
+                    {routes.map((e, index) => (
+                        <Route path={e.path} element={<e.page />} key={'route_page_' + index} />
                     ))}
                 </Routes >
             </div>

@@ -1,6 +1,5 @@
-import { MainButton } from 'shared/ui';
 import './index.scss'
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { ButtonClose, InputText, InputCheckbox } from './ui';
 import { isFieldsFilled, prepareDataToArray } from './helpers';
 import { Link } from 'react-router-dom';
@@ -47,11 +46,30 @@ const FormGetAllow = ({ setIsFormOpened }: Props) => {
         setData({ ...result });
     };
 
-    function click(e: Event): void {
+    function handleSubmit(e: FormEvent): void {
         e.preventDefault();
+        const namePattern = /[a-zA-Z]{2,20}$/;
+        const mailPattern = /^[\w-]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const phonePattern = /^\d{8,12}$/;
+        
+        if (!namePattern.test(data.name.value)) {
+            alert("Name requirements: [a-zA-Z] 2-20 characters");
+            return;
+        };
+        
+        if (!mailPattern.test(data.email.value)) {
+            alert("Email is not correct");
+            return;
+        };
+
+        if (!phonePattern.test(data.phone.value)) {
+            alert("Phone number is not correct: There are should be only digit, 8-12 characters");
+            return;
+        };
+
         console.log(prepareDataToArray(data));
         setIsFormOpened(false);
-    };
+    }
 
     return (
         <div className="form_get_allow">
@@ -61,13 +79,13 @@ const FormGetAllow = ({ setIsFormOpened }: Props) => {
             <div className="form_title">
                 <h2>Стань нашим партнером и начни зарабатывать: </h2>
             </div>
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <InputText name='name' data={data} setValue={setValue} />
                 <InputText name='email' data={data} setValue={setValue} />
                 <InputText name='phone' data={data} setValue={setValue} />
                 <InputCheckbox name='mailSubscribe' data={data} setValue={setValue} />
                 <InputCheckbox name='dataCollection' data={data} setValue={setValue} />
-                <MainButton action={click} typeClass='button_send_form' disabled={!isFilled}>Получить доступ</MainButton>
+                <button className={'mainButton button_send_form'} disabled={!isFilled}>Получить доступ</button>
                 <span>Нажимая кнопку Вы принимаете <Link onClick={() => setIsFormOpened(false)} to='policy'>политику конфиденциальности</Link></span>
             </form>
         </div >
